@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-3">Currency App</h1>
+                <form>
+                    <div class="form-group">
+                        <input
+                        id="usdollarInput" 
+                        type="number" 
+                        class=" form control form-control-lg"
+                        placeholder="Enter Pounds...">
+                    </div>
+                    <div id="output">
+
+                        <div class="card bg-info mb-2">
+                            <div class="card-block">
+                                <h4>South African Rand:</h4>
+                                <div id="rand"></div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-warning mb-2">
+                            <div class="card-block">
+                                <h4>Pound Sterling:</h4>
+                                <div id="pound"></div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-secondary mb-2">
+                            <div class="card-block">
+                                <h4>Euro:</h4>
+                                <div id="euro"></div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-danger mb-2">
+                            <div class="card-block">
+                                <h4>Chinese Yuan:</h4>
+                                <div id="yuan"></div>
+                            </div>
+                        </div>
+
+                        <div class="card bg-primary mb-2">
+                            <div class="card-block">
+                                <h4>Russian Ruble:</h4>
+                                <div id="ruble"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+       document.getElementById('output').style.visibility = 'hidden'; 
+       document.getElementById('usdollarInput').addEventListener('input', function(e) {
+
+           document.getElementById('output').style.visibility = 'visible'; 
+           let USD = e.target.value;
+           document.getElementById('rand').innerHTML = USD*14.73;
+           document.getElementById('pound').innerHTML = USD*0.78;
+           document.getElementById('euro').innerHTML = USD*0.91;
+           document.getElementById('yuan').innerHTML = USD*7.04;
+           document.getElementById('ruble').innerHTML = USD*63.85;
+           
+       });
+    </script>
+</body>
+</html>
